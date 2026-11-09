@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Imagen interactiva de los factores de forma ATX, Micro-ATX, Mini-ATX, Nano-ITX y Pico-ITX"><title>Imagen interactiva · Factores de forma de placas base</title>
+<style>
+:root{color-scheme:dark;--bg:#071018;--card:#111f29;--muted:#a5b7c2;--cyan:#39e5d7;--line:rgba(174,205,216,.18);--white:#f4f9fb}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 60% -10%,#17344a 0,transparent 43%),#071018;color:var(--white);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit}button{font:inherit}main{max-width:1370px;margin:auto;padding:38px 24px 65px}.topline{display:flex;justify-content:space-between;align-items:center;color:#76b6c2;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:800;gap:10px}.dot{width:9px;height:9px;background:var(--cyan);display:inline-block;border-radius:50%;box-shadow:0 0 0 6px #39e5d71c;margin-right:8px}h1{font-size:clamp(2rem,5.5vw,4.25rem);line-height:1.04;letter-spacing:-.055em;margin:25px 0 14px;max-width:960px}h1 em{font-style:normal;color:var(--cyan)}.lead{color:#bed0d6;max-width:950px;margin:0 0 28px;font-size:1.07rem}.intro{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:25px 0 30px}.intro article{background:linear-gradient(150deg,#112530,#0c1922);border:1px solid var(--line);border-radius:18px;padding:23px}.intro h2{margin:0 0 10px;font-size:1.03rem;color:#adf9ed}.intro p{margin:0;color:#c2d3d9;font-size:.94rem}.drawing{border:1px solid #2a4650;background:radial-gradient(ellipse at 50% 38%,#153946 0%,#0a1b26 59%,#09131c 100%);border-radius:22px;overflow:hidden;position:relative}.drawing::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(#6cd9df0a 1px,transparent 1px),linear-gradient(90deg,#6cd9df0a 1px,transparent 1px);background-size:28px 28px}.drawing-header{padding:19px 25px 0;display:flex;gap:15px;align-items:center;justify-content:space-between}.drawing-header strong{font-size:.96rem}.drawing-header small{color:#88abb6;font-size:.77rem}.drawing svg{display:block;max-width:100%;height:auto;overflow:visible;position:relative}.board-group{cursor:pointer;outline:none;transition:filter .2s}.board-group:focus-visible .board-hit{stroke:#fff;stroke-width:3}.board-hit{fill:transparent;stroke:transparent;transition:.2s}.board-group:hover .board-hit,.board-group.active .board-hit{fill:#a0eff608;stroke:#63e4d85c;stroke-width:1.5}.board-group.active .board-outline{filter:drop-shadow(0 0 12px #19e5da9c)}.board-group:hover .board-outline{filter:drop-shadow(0 0 8px #9de7f083)}.board-name{fill:#e1eef2;font-size:17px;font-weight:750;letter-spacing:.2px}.number-ring{fill:#0c2028;stroke-width:2}.number-text{fill:#fff;font-size:13px;font-weight:800}.board-measure{fill:#9eb6c1;font-size:13px}.board-group.active .board-measure{fill:#fff}.board-group.active .number-ring{fill:#144d53}.select-prompt{display:flex;align-items:center;gap:7px;padding:0 22px 19px;color:#9eafb8;font-size:.82rem}.select-prompt span{color:var(--cyan);font-weight:800}.tabrow{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0 20px}.tabrow button{padding:10px 15px;border:1px solid #2b4955;border-radius:999px;background:#0f222c;color:#c5d5df;font-size:.86rem;cursor:pointer;font-weight:650;transition:.18s}.tabrow button:hover,.tabrow button:focus-visible{border-color:#39e5d7;outline:none;color:#fff}.tabrow button[aria-pressed=true]{background:#2bccc621;border-color:var(--cyan);color:#b8fff5}.detail{display:grid;grid-template-columns:1.25fr 1fr;gap:17px;scroll-margin-top:16px}.detail-section{background:linear-gradient(150deg,#122733,#0d1b25);border:1px solid var(--line);border-radius:19px;padding:26px 28px;min-height:355px}.eyebrow{font-size:.76rem;letter-spacing:.13em;color:var(--cyan);font-weight:800;text-transform:uppercase}.detail h2{font-size:clamp(1.8rem,3.6vw,2.85rem);margin:3px 0 2px;letter-spacing:-.035em;line-height:1.18}.dim{font-weight:700;color:#92c4cf;margin-bottom:18px}.detail h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.13em;color:#65e7d8;margin:20px 0 6px}.detail p{margin:0;color:#c4d2d8;font-size:.95rem}.case-card{display:flex;flex-direction:column;gap:12px}.case-card .feature{padding:14px;background:#0b1c26;border:1px solid #29404c;border-radius:13px}.case-card .feature h3{margin:0 0 6px}.case-card .feature p{font-size:.88rem}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions a{padding:12px 10px;border-radius:11px;display:flex;justify-content:center;align-items:center;gap:8px;background:#14443f;border:1px solid #43aa9d;color:#d4fff7;text-decoration:none;font-weight:750;font-size:.83rem;text-align:center}.actions a:nth-child(2){background:#1a3240;border-color:#476679}.actions a:hover{filter:brightness(1.25)}.caution{background:#30291e;border:1px solid #7d6642;border-radius:12px;padding:11px 14px;color:#f5dfbb;font-size:.79rem;line-height:1.5}.note{margin:17px 0 0;color:#9ab1bc;font-size:.76rem}.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:start;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}details{max-width:880px;color:#b6c8d0;font-size:.83rem}summary{cursor:pointer;color:#9eefe5;font-weight:750}.sources{display:flex;flex-wrap:wrap;gap:8px 17px;margin:13px 0}.sources a{color:#a9cada;text-decoration:underline;text-underline-offset:3px}.footnote{font-size:.75rem;max-width:350px;color:#829ca6}.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@media(max-width:850px){main{padding:26px 13px 45px}.intro,.detail{grid-template-columns:1fr}.drawing{overflow-x:auto}.drawing svg{min-width:750px}.drawing-header{min-width:600px}.select-prompt{min-width:600px}.detail-section{min-height:0}.detail-section{padding:22px}.topline{font-size:.62rem}.actions{grid-template-columns:1fr}.lead{font-size:1rem}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body><main>
+<div class="topline"><span><span class="dot"></span> TECNOLOGÍA · HARDWARE</span><span>GUÍA VISUAL INTERACTIVA · 05 FORMATOS</span></div>
+<h1>El <em>factor de forma</em> de una placa base</h1>
+<p class="lead">El tamaño influye en todo: el espacio del equipo, sus conexiones, las posibilidades de ampliación y el gabinete compatible. Explora los cinco formatos de la imagen pulsando sobre cada placa.</p>
+<section class="intro" aria-label="Conceptos fundamentales"><article><h2>01 / ¿Qué es el factor de forma?</h2><p>Es el conjunto de especificaciones físicas y mecánicas de una placa base: dimensiones, disposición de los orificios de montaje, conectores y organización de componentes. Permite determinar si encaja en un gabinete y cómo se relaciona con la alimentación, la refrigeración y las ampliaciones.</p></article><article><h2>02 / ¿Por qué se impuso ATX?</h2><p>ATX se consolidó desde 1995 porque normalizó el diseño de placas, gabinetes, fuentes y conexiones. Mejoró la organización interna frente a formatos antiguos, facilitó la ventilación, el montaje y las futuras ampliaciones, y creó un ecosistema amplio de componentes compatibles. Micro-ATX heredó gran parte de esa compatibilidad.</p></article></section>
+<section class="drawing" aria-label="Imagen interactiva con cinco placas base"><div class="drawing-header"><strong>EXPLORA EL TAMAÑO DE CADA PLACA</strong><small>Toca o haz clic sobre una placa</small></div>
+<svg viewBox="0 0 1375 335" role="img" aria-label="Cinco placas base esquemáticas y pulsables: ATX, Micro-ATX, Mini-ATX, Nano-ITX y Pico-ITX. Las siluetas ilustran sus tamaños relativos históricos.">
+<defs><linearGradient id="shine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b303a"/><stop offset="1" stop-color="#143e49"/></linearGradient></defs>
+<g class="board-group" data-id="atx" tabindex="0" role="button" aria-label="Abrir información de ATX">
+<rect class="board-hit" x="41" y="26" width="228" height="300" rx="18" />
+<text class="board-name" x="155" y="33" text-anchor="middle">ATX</text>
+<circle class="number-ring" cx="155" cy="72" r="18" stroke="#00e6da"/>
+<text x="155" y="77" text-anchor="middle" class="number-text">01</text>
+<rect x="55.9" y="111.4" width="198.2" height="158.6" rx="4" fill="#0b303a" stroke="#00e6da" stroke-width="2.2" class="board-outline"/>
+<path d="M62.9,121.4 h51.3 l8,-5 h40.3" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M67.9,134.4 h48.8 l8,-5 h38.3" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M72.9,147.4 h46.3 l8,-5 h36.4" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M62.9,160.4 h48.0 l8,-5 h37.7" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M67.9,173.4 h49.9 l8,-5 h39.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M72.9,186.4 h47.4 l8,-5 h37.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M62.9,199.4 h49.1 l8,-5 h38.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M67.9,212.4 h46.6 l8,-5 h36.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M72.9,225.4 h48.5 l8,-5 h38.1" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<circle cx="62.9" cy="118.4" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="247.1" cy="118.4" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="62.9" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="247.1" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<rect x="76.7" y="130.2" width="57.5" height="57.5" rx="3" fill="#244d57" stroke="#b2dae3" stroke-width="1.5"/>
+<rect x="87.0" y="140.6" width="36.8" height="36.8" rx="2" fill="#0d222a" stroke="#64c1c4" stroke-width="1"/>
+<rect x="196.6" y="128.8" width="4.4" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="204.5" y="128.8" width="4.4" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="212.4" y="128.8" width="4.4" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="75.7" y="217.7" width="111.0" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="75.7" y="228.7" width="111.0" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="75.7" y="239.7" width="111.0" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="75.7" y="250.7" width="111.0" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="53.9" y="121.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="53.9" y="137.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="53.9" y="153.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<text x="155" y="300" class="board-measure" text-anchor="middle">305 × 244 mm</text>
+</g>
+<g class="board-group" data-id="micro" tabindex="0" role="button" aria-label="Abrir información de Micro-ATX">
+<rect class="board-hit" x="306" y="26" width="228" height="300" rx="18" />
+<text class="board-name" x="420" y="33" text-anchor="middle">Micro-ATX</text>
+<circle class="number-ring" cx="420" cy="72" r="18" stroke="#79b7ff"/>
+<text x="420" y="77" text-anchor="middle" class="number-text">02</text>
+<rect x="340.7" y="111.4" width="158.6" height="158.6" rx="4" fill="#0b303a" stroke="#79b7ff" stroke-width="2.2" class="board-outline"/>
+<path d="M347.7,121.4 h40.2 l8,-5 h31.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M352.7,134.4 h37.7 l8,-5 h29.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M357.7,147.4 h35.2 l8,-5 h27.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M347.7,160.4 h36.8 l8,-5 h29.0" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M352.7,173.4 h38.8 l8,-5 h30.5" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M357.7,186.4 h36.3 l8,-5 h28.5" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M347.7,199.4 h38.0 l8,-5 h29.8" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M352.7,212.4 h35.4 l8,-5 h27.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M357.7,225.4 h37.4 l8,-5 h29.4" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<circle cx="347.7" cy="118.4" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="492.3" cy="118.4" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="347.7" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="492.3" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<rect x="357.4" y="136.0" width="46.0" height="46.0" rx="3" fill="#244d57" stroke="#b2dae3" stroke-width="1.5"/>
+<rect x="365.6" y="144.3" width="29.4" height="29.4" rx="2" fill="#0d222a" stroke="#64c1c4" stroke-width="1"/>
+<rect x="453.3" y="128.8" width="3.5" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="460.3" y="128.8" width="3.5" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="467.3" y="128.8" width="3.5" height="82.5" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="356.6" y="217.7" width="88.8" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="356.6" y="228.7" width="88.8" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="356.6" y="239.7" width="88.8" height="6.0" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="338.7" y="121.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="338.7" y="137.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="338.7" y="153.4" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<text x="420" y="300" class="board-measure" text-anchor="middle">244 × 244 mm (máx.)</text>
+</g>
+<g class="board-group" data-id="mini" tabindex="0" role="button" aria-label="Abrir información de Mini-ATX">
+<rect class="board-hit" x="578" y="26" width="228" height="300" rx="18" />
+<text class="board-name" x="692" y="33" text-anchor="middle">Mini-ATX</text>
+<circle class="number-ring" cx="692" cy="72" r="18" stroke="#ffce85"/>
+<text x="692" y="77" text-anchor="middle" class="number-text">03</text>
+<rect x="599.7" y="134.8" width="184.6" height="135.2" rx="4" fill="#0b303a" stroke="#ffce85" stroke-width="2.2" class="board-outline"/>
+<path d="M606.7,144.8 h47.5 l8,-5 h37.3" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M611.7,157.8 h45.0 l8,-5 h35.3" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M616.7,170.8 h42.4 l8,-5 h33.4" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M606.7,183.8 h44.1 l8,-5 h34.7" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M611.7,196.8 h46.1 l8,-5 h36.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M616.7,209.8 h43.6 l8,-5 h34.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M606.7,222.8 h45.2 l8,-5 h35.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M611.7,235.8 h42.7 l8,-5 h33.6" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M616.7,248.8 h44.7 l8,-5 h35.1" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<circle cx="606.7" cy="141.8" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="777.3" cy="141.8" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="606.7" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="777.3" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<rect x="619.1" y="148.6" width="53.5" height="53.5" rx="3" fill="#244d57" stroke="#b2dae3" stroke-width="1.5"/>
+<rect x="628.7" y="158.2" width="34.3" height="34.3" rx="2" fill="#0d222a" stroke="#64c1c4" stroke-width="1"/>
+<rect x="730.8" y="149.7" width="4.1" height="70.3" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="738.3" y="149.7" width="4.1" height="70.3" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="745.9" y="149.7" width="4.1" height="70.3" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="618.2" y="225.4" width="103.4" height="5.4" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="618.2" y="234.8" width="103.4" height="5.4" rx="1.5" fill="#091924" stroke="#b0bcc6" stroke-width=".75"/>
+<rect x="597.7" y="144.8" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="597.7" y="160.8" width="7" height="10.0" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<text x="692" y="300" class="board-measure" text-anchor="middle">284 × 208 mm (histórico)</text>
+</g>
+<g class="board-group" data-id="nano" tabindex="0" role="button" aria-label="Abrir información de Nano-ITX">
+<rect class="board-hit" x="842" y="26" width="228" height="300" rx="18" />
+<text class="board-name" x="956" y="33" text-anchor="middle">Nano-ITX</text>
+<circle class="number-ring" cx="956" cy="72" r="18" stroke="#c1a2ff"/>
+<text x="956" y="77" text-anchor="middle" class="number-text">04</text>
+<rect x="917.0" y="192.0" width="78.0" height="78.0" rx="4" fill="#0b303a" stroke="#c1a2ff" stroke-width="2.2" class="board-outline"/>
+<path d="M924.0,202.0 h17.6 l8,-5 h13.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M929.0,215.0 h15.1 l8,-5 h11.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M934.0,228.0 h12.6 l8,-5 h9.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M924.0,241.0 h14.3 l8,-5 h11.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M929.0,254.0 h16.2 l8,-5 h12.8" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M934.0,206.0 h13.7 l8,-5 h10.8" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M924.0,219.0 h15.4 l8,-5 h12.1" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M929.0,232.0 h12.9 l8,-5 h10.1" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M934.0,245.0 h14.8 l8,-5 h11.7" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<circle cx="924.0" cy="199.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="988.0" cy="199.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="924.0" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="988.0" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<rect x="925.2" y="204.1" width="22.6" height="22.6" rx="3" fill="#244d57" stroke="#b2dae3" stroke-width="1.5"/>
+<rect x="929.3" y="208.2" width="14.5" height="14.5" rx="2" fill="#0d222a" stroke="#64c1c4" stroke-width="1"/>
+<rect x="972.4" y="200.6" width="2.6" height="40.6" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="978.5" y="200.6" width="2.6" height="40.6" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="915.0" y="202.0" width="7" height="7.8" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="915.0" y="215.3" width="7" height="7.8" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<text x="956" y="300" class="board-measure" text-anchor="middle">120 × 120 mm</text>
+</g>
+<g class="board-group" data-id="pico" tabindex="0" role="button" aria-label="Abrir información de Pico-ITX">
+<rect class="board-hit" x="1076" y="26" width="228" height="300" rx="18" />
+<text class="board-name" x="1190" y="33" text-anchor="middle">Pico-ITX</text>
+<circle class="number-ring" cx="1190" cy="72" r="18" stroke="#ff92be"/>
+<text x="1190" y="77" text-anchor="middle" class="number-text">05</text>
+<rect x="1157.5" y="223.2" width="65.0" height="46.8" rx="4" fill="#0b303a" stroke="#ff92be" stroke-width="2.2" class="board-outline"/>
+<path d="M1164.5,233.2 h14.0 l8,-5 h11.0" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1169.5,246.2 h11.5 l8,-5 h9.0" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1174.5,259.2 h9.0 l8,-5 h7.0" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1164.5,243.2 h10.6 l8,-5 h8.4" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1169.5,256.2 h12.6 l8,-5 h9.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1174.5,240.2 h10.1 l8,-5 h7.9" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1164.5,253.2 h11.8 l8,-5 h9.2" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1169.5,237.2 h9.2 l8,-5 h7.3" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<path d="M1174.5,250.2 h11.2 l8,-5 h8.8" fill="none" stroke="#1b6871" stroke-width=".85" opacity=".55"/>
+<circle cx="1164.5" cy="230.2" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="1215.5" cy="230.2" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="1164.5" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<circle cx="1215.5" cy="263.0" r="2.6" fill="#05141d" stroke="#7b9aa4" stroke-width="1"/>
+<rect x="1164.3" y="227.8" width="18.8" height="18.8" rx="3" fill="#244d57" stroke="#b2dae3" stroke-width="1.5"/>
+<rect x="1167.7" y="231.2" width="12.1" height="12.1" rx="2" fill="#0d222a" stroke="#64c1c4" stroke-width="1"/>
+<rect x="1203.7" y="228.3" width="2.6" height="24.3" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="1209.8" y="228.3" width="2.6" height="24.3" rx="1" fill="#0a1824" stroke="#96a7b0" stroke-width=".7"/>
+<rect x="1155.5" y="233.2" width="7" height="4.7" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<rect x="1155.5" y="241.2" width="7" height="4.7" rx="1.2" fill="#b0bcc7" stroke="#475569" stroke-width=".7"/>
+<text x="1190" y="300" class="board-measure" text-anchor="middle">100 × 72 mm</text>
+</g>
+</svg><div class="select-prompt"><span>●</span> Cada placa tiene información, un equipo real y un enlace al gabinete compatible.</div></section>
+<nav class="tabrow" aria-label="Elegir factor de forma"><button data-select="atx" aria-pressed="true">ATX</button><button data-select="micro" aria-pressed="false">Micro-ATX</button><button data-select="mini" aria-pressed="false">Mini-ATX</button><button data-select="nano" aria-pressed="false">Nano-ITX</button><button data-select="pico" aria-pressed="false">Pico-ITX</button></nav>
+<section class="detail" id="detalle" aria-live="polite"><div class="detail-section"><span class="eyebrow" id="tag">El estándar versátil</span><h2 id="selected-title">ATX</h2><div class="dim" id="selected-dims">305 × 244 mm</div><h3>Características principales</h3><p id="selected-desc"></p><h3>Tipo de uso</h3><p id="selected-usage"></p></div><div class="detail-section case-card"><div class="feature"><h3>Equipo microinformático real</h3><p id="selected-equipment"></p></div><div class="feature"><h3>Gabinete / caja compatible</h3><p id="selected-case"></p></div><div class="actions"><a id="link-equipment" target="_blank" rel="noopener noreferrer" href="#">↗ Ver equipo real</a><a id="link-case" target="_blank" rel="noopener noreferrer" href="#">↗ Ver gabinete</a></div><div class="caution" id="selected-note"></div></div></section>
+<p class="note">La ilustración es esquemática y toma como referencia los cinco formatos del enunciado. Los equipos históricos y los gabinetes especializados se incluyen como ejemplos técnicos, no como productos necesariamente disponibles a la venta. Comprueba siempre las especificaciones de montaje.</p>
+<footer class="footer"><details><summary>Fuentes y fichas técnicas consultadas</summary><div class="sources"><a href="https://ipc2u.de/news/produktneuigkeiten/how-to-choose-the-form-factor-of-axiomtek-mainboards/" target="_blank" rel="noopener noreferrer">Medidas y factores de forma <span aria-hidden="true">↗</span></a>
+<a href="https://hardzone.es/tutoriales/componentes/tipo-placa-base-pc/" target="_blank" rel="noopener noreferrer">ATX y diferencias entre formatos <span aria-hidden="true">↗</span></a>
+<a href="https://www.corsair.com/us/en/p/gaming-computers/cs-9050128-na/vengeance-i7500-gaming-pc-intel-core-i9-14900kf-geforce-rtx-5080-32gb-ddr5-2tb-m-2-ssd-win11-home-cs-9050128-na" target="_blank" rel="noopener noreferrer">Especificaciones CORSAIR VENGEANCE i7500 <span aria-hidden="true">↗</span></a>
+<a href="https://support.hp.com/us-en/document/ish_7935083-7935109-16" target="_blank" rel="noopener noreferrer">Ficha HP OMEN 45L Micro-ATX <span aria-hidden="true">↗</span></a>
+<a href="https://device.report/m/7fec0b322bc05a31c19749f98fd42f3d55a1b542e038f46b598608e2ba0d7015.pdf" target="_blank" rel="noopener noreferrer">Ficha AOpen Digital Engine Mini-ATX <span aria-hidden="true">↗</span></a>
+<a href="https://portwell.com/products/detail.php?CUSTCHAR1=WEBS-21G0" target="_blank" rel="noopener noreferrer">Ficha Portwell WEBS-21G0 Nano-ITX <span aria-hidden="true">↗</span></a>
+<a href="https://cdn.viaembedded.com/eol_products/docs/artigo-a1000/datasheet/ARTiGO_Pico-ITX_Builder_Kit_A1000_Datasheet_v200808.pdf" target="_blank" rel="noopener noreferrer">Ficha VIA ARTiGO A1000 Pico-ITX <span aria-hidden="true">↗</span></a></div></details><span class="footnote">Imagen interactiva elaborada para una actividad de sistemas microinformáticos.</span></footer>
+</main><script>
+const boards=[{"id":"atx","title":"ATX","dims":"305 × 244 mm","width":305,"height":244,"tag":"El estándar versátil","desc":"ATX (Advanced Technology eXtended) es un formato de placa base de escritorio de 305 × 244 mm. Normaliza tamaño, fijaciones, puertos, alimentación y disposición de componentes. Puede ofrecer hasta siete posiciones de expansión y dispone de espacio para varias ranuras de RAM, puertos y refrigeración.","usage":"Ordenadores de sobremesa, equipos de juegos, edición de vídeo y estaciones de trabajo que necesitan capacidad de ampliación.","equipment":"CORSAIR VENGEANCE i7500 (configuración con placa MSI PRO Z790-P WiFi, formato ATX).","equipmentUrl":"https://www.corsair.com/us/en/p/gaming-computers/cs-9050128-na/vengeance-i7500-gaming-pc-intel-core-i9-14900kf-geforce-rtx-5080-32gb-ddr5-2tb-m-2-ssd-win11-home-cs-9050128-na","case":"Corsair 4000D AIRFLOW, gabinete semitorre compatible con ATX.","caseUrl":"https://www.corsair.com/es/es/p/pc-cases/cc-9011200-ww","note":"Su combinación de espacio y compatibilidad es la razón de que haya servido de referencia para numerosos PC de sobremesa."},{"id":"micro","title":"Micro-ATX","dims":"244 × 244 mm (máx.)","width":244,"height":244,"tag":"Equilibrio y ahorro","desc":"Micro-ATX (mATX o µATX) reduce la superficie de la placa hasta un máximo habitual de 244 × 244 mm y mantiene gran parte del ecosistema ATX. Normalmente ofrece menos ranuras de expansión (hasta cuatro posiciones) y suele resultar más económico.","usage":"Equipos de oficina, aulas, ordenadores domésticos y PC de juegos compactos con ampliación moderada.","equipment":"HP OMEN 45L GT22-1090, que incorpora la placa ArcticOC de tipo Micro-ATX.","equipmentUrl":"https://support.hp.com/us-en/document/ish_7935083-7935109-16","case":"Cooler Master MasterBox Q300L, minitorre compatible con Micro-ATX y Mini-ITX.","caseUrl":"https://www.coolermaster.com/en-global/products/masterbox-q300l.html","note":"Una placa Micro-ATX también puede instalarse en muchas cajas ATX, siempre que tengan los anclajes correspondientes."},{"id":"mini","title":"Mini-ATX","dims":"284 × 208 mm (histórico)","width":284,"height":208,"tag":"Denominación histórica","desc":"Mini-ATX es un nombre poco usado y ambiguo. En antiguas tablas del estándar ATX aparece con dimensiones de 284 × 208 mm; algunos fabricantes, como AOpen, también emplearon el nombre para diseños compactos propios de tamaño distinto. No debe confundirse con Mini-ITX.","usage":"Ordenadores compactos antiguos, cartelería digital y sistemas especializados; hoy ha sido desplazado en gran medida por Micro-ATX y Mini-ITX.","equipment":"AOpen Digital Engine DE57-HA, miniordenador clasificado como «mini-ATX» en su ficha de fabricante (variante propietaria, no la placa histórica de 284 × 208 mm).","equipmentUrl":"https://device.report/m/7fec0b322bc05a31c19749f98fd42f3d55a1b542e038f46b598608e2ba0d7015.pdf","case":"Gabinete original AOpen Digital Engine DE57-HA (166 × 48 × 157 mm). Es una carcasa específica para ese equipo, no una caja Mini-ATX universal.","caseUrl":"https://device.report/m/7fec0b322bc05a31c19749f98fd42f3d55a1b542e038f46b598608e2ba0d7015.pdf","note":"Precaución: para una placa histórica de 284 × 208 mm se debe verificar físicamente la tornillería y los puertos antes de elegir una caja ATX."},{"id":"nano","title":"Nano-ITX","dims":"120 × 120 mm","width":120,"height":120,"tag":"Integración industrial","desc":"Nano-ITX mide 120 × 120 mm. Sus placas suelen integrar procesadores de bajo consumo, tener memoria compacta y ofrecer conectividad mediante puertos integrados en lugar de numerosas tarjetas de expansión.","usage":"Automatización industrial, quioscos, cartelería digital, equipos integrados y sistemas compactos de bajo consumo.","equipment":"Portwell WEBS-21G0, ordenador industrial fanless con placa Nano-ITX NANO-6051.","equipmentUrl":"https://portwell.com/products/detail.php?CUSTCHAR1=WEBS-21G0","case":"Carcasa industrial específica Portwell WEBS-21G0, 150 × 150 × 62,6 mm; admite montaje en pared o carril DIN.","caseUrl":"https://portwell.com/products/detail.php?CUSTCHAR1=WEBS-21G0","note":"Al ser un sistema embebido, resulta más seguro usar el gabinete indicado por el fabricante que una torre genérica."},{"id":"pico","title":"Pico-ITX","dims":"100 × 72 mm","width":100,"height":72,"tag":"Tamaño mínimo","desc":"Pico-ITX mide 100 × 72 mm. Es un factor de forma extremadamente compacto, pensado para placas con procesador integrado, pocas posibilidades de expansión y bajo consumo energético.","usage":"Miniordenadores embebidos, dispositivos multimedia, control industrial y equipos donde el espacio disponible es muy reducido.","equipment":"VIA ARTiGO A1000, kit de miniordenador con placa VIA EPIA PX de formato Pico-ITX.","equipmentUrl":"https://cdn.viaembedded.com/eol_products/docs/artigo-a1000/datasheet/ARTiGO_Pico-ITX_Builder_Kit_A1000_Datasheet_v200808.pdf","case":"Gabinete específico VIA ARTiGO A1000 de aproximadamente 150 × 110 × 45 mm, incluido en el kit.","caseUrl":"https://cdn.viaembedded.com/eol_products/docs/artigo-a1000/datasheet/ARTiGO_Pico-ITX_Builder_Kit_A1000_Datasheet_v200808.pdf","note":"Ejemplo histórico y documentado. El kit se muestra como referencia técnica, no como recomendación de compra actual."}];
+const $=id=>document.getElementById(id);
+function selectBoard(id){const b=boards.find(x=>x.id===id);if(!b)return;
+ $('tag').textContent=b.tag;$('selected-title').textContent=b.title;$('selected-dims').textContent=b.dims;$('selected-desc').textContent=b.desc;$('selected-usage').textContent=b.usage;$('selected-equipment').textContent=b.equipment;$('selected-case').textContent=b.case;$('selected-note').textContent=b.note;
+ $('link-equipment').href=b.equipmentUrl;$('link-case').href=b.caseUrl;
+ document.querySelectorAll('[data-select]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.select===id?'true':'false'));
+ document.querySelectorAll('.board-group').forEach(x=>x.classList.toggle('active',x.dataset.id===id));
+}
+document.querySelectorAll('[data-select]').forEach(el=>el.addEventListener('click',()=>selectBoard(el.dataset.select)));
+document.querySelectorAll('.board-group').forEach(el=>{el.addEventListener('click',()=>selectBoard(el.dataset.id));el.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();selectBoard(el.dataset.id)}})});
+selectBoard('atx');
+</script></body></html>
